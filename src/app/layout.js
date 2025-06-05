@@ -1,6 +1,7 @@
 // app/layout.js
 import './globals.css';
-import Navbar from '@/components/Navbar';
+import MeatbagNavbar from '@/components/MeatbagNavbar';
+import MeatbagFooter from '@/components/MeatbagFooter';
 
 export const metadata = {
   title: 'My Blog',
@@ -11,8 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
+        <MeatbagNavbar />
         <main>{children}</main>
+        <MeatbagFooter />
       </body>
     </html>
   );

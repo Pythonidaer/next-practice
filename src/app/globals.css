@@ -1,0 +1,507 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+main {
+  grid-row: 2;
+}
+
+/* Meatbag Navbar and Logo*/
+
+.meatbag-navbar {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 100%;
+  margin: 4rem 4.5rem 32px;
+}
+
+.meatbag-navbar a:visited,
+.meatbag-navbar a:hover,
+.meatbag-navbar a:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.meatbag-navbar a {
+  text-decoration: none;
+}
+
+/* Dashboard Page */
+.dashboard-container {
+  /* margin: 0 0 0 6rem; */
+  max-width: 92vw;
+  padding-bottom: 2rem;
+  margin: 0 14rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 100%;
+  margin: 0 4.5rem 84px;
+  
+}
+
+.dashboard-arrange-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #222;
+  margin-left: 2rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-selector-row {
+  margin-bottom: 22px;
+}
+
+.dashboard-selector {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 8px 44px 8px 18px;
+  /* extra right padding for arrow */
+  border-radius: 14px;
+  border: 1.5px solid #bbb;
+  background: #ededed;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  margin-left: 0;
+  width: 549px;
+}
+
+.edit-workout-selector {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 8px 44px 8px 18px;
+  /* extra right padding for arrow */
+  border-radius: 14px;
+  border: 1.5px solid #bbb;
+  background: #ededed;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  margin-left: 0;
+}
+
+.dashboard-selector::-ms-expand {
+  display: none;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 20px;
+  color: #222;
+}
+
+.dashboard-drag-row {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.dashboard-cards-row {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 equal columns */
+  gap: 10px;
+  margin: 18px 0 34px 0;
+  padding: 12px 10px 12px 10px;
+  border: 2px solid #bdbdbd;
+  border-radius: 8px;
+  background: #fafafa;
+  overflow-x: auto;
+}
+
+.dashboard-card {
+  min-width: 150px;
+  min-height: 329px;
+  background: #d3d3d3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 14px 16px 18px;
+  position: relative;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s;
+}
+
+/* .dashboard-card.rest {
+  background: #ededed;
+} */
+
+/* .dashboard-card.complete {
+  background: #b2ffb2;
+} */
+
+.dashboard-card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.dashboard-card-status {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.dashboard-edit-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 0;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #bbb3;
+  width: 117px;
+  padding: 20px 12.5px;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+}
+
+.dashboard-card:hover .dashboard-edit-btn {
+  display: flex;
+}
+
+.dashboard-edit-btn:hover {
+  color: #0070f3;
+}
+
+.dashboard-actions-row {
+  display: flex;
+  gap: 32px;
+  margin-top: 18px;
+  margin-left: 8px;
+}
+
+.dashboard-action-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  background: #ededed;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 34px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 1px 2px #bbb2;
+  min-width: 165px;
+  border: 1px solid rgba(197, 197, 197, 1)
+}
+
+.dashboard-action-btn:hover {
+  background: #d3d3d3;
+}
+
+/* Edit Form Page*/
+.edit-workout-page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 48px 16px;
+  margin-left: 4.5rem;
+}
+
+.edit-workout-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.edit-workout-fields {
+  width: 100%;
+  max-width: 686px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.edit-workout-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 17px;
+  width: 100%;
+}
+
+.edit-workout-row label {
+  min-width: 130px;
+  font-family: 'Inter', sans-serif;
+  /* font-size: 16px; */
+  font-size: 22.76px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-right: 10px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.edit-workout-input,
+.edit-workout-textarea,
+.custom-select-wrapper {
+  flex: 1 1 0px;
+  max-width: 100%;
+}
+
+.edit-workout-input,
+.edit-workout-textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  border: 1.5px solid #bbb;
+  background: #ededed;
+  padding: 10px 14px;
+  outline: none;
+  resize: none;
+  height: 44px;
+  line-height: 44px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.edit-workout-input::placeholder,
+.edit-workout-textarea::placeholder {
+  color: #222; /* Or use rgba(0,0,0,0.9) for even darker */
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 22.76px;
+  letter-spacing: 0;
+  opacity: 1; /* Ensures the color is not faded by default browser styles */
+}
+
+.edit-workout-textarea {
+  min-height: 223px;
+  max-width: 100%;
+  border-radius: 14px;
+}
+
+.edit-workout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* to push left of labels */
+  padding-left: 162px;
+  box-sizing: border-box;
+}
+
+.edit-workout-actions .dashboard-action-btn {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+.meatbag-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.meatbag-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+  margin-right: 32px;
+}
+
+.meatbag-nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.meatbag-nav-links a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.meatbag-nav-links a:hover {
+  color: #0070f3;
+}
+
+/* Secret Page */
+
+/* WorkoutCard Styles - Updated for Figma look */
+.workout-card {
+  background: #ededed;
+  border: none;
+  border-radius: 20px;
+  padding: 80px;
+  min-width: 489px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+}
+
+
+.input-row {
+  margin-bottom: 0px;
+  padding: 0;
+  width: 100%;
+}
+
+
+.input-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: 0;
+  display: block;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  color: #111;
+}
+
+/* Complete Button in Workout Card */
+
+.complete-btn {
+  width: 100%;
+  background: #d3d3d3;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  cursor: pointer;
+  display: block;
+  transition: background 0.2s;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  border-radius: 90px;
+  gap: 10px;
+  /* Only useful if you add child elements inside the button */
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.complete-btn:active {
+  background: #bdbdbd;
+}
+
+.complete-btn:hover {
+  background: rgba(118, 117, 117, 0.314)
+}
+
+.complete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.workout-cards-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  /* prevents stretching */
+  margin-left: 4.5rem;
+  flex-wrap: wrap;
+}
+
+/* Meatbag Footer */
+
+.meatbag-footer {
+  display: flex;
+  justify-content: end;
+  gap: 28px;
+  margin: 4rem 4.5rem;
+}
+
+.meatbag-footer a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 100%;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+.meatbag-footer a:visited,
+.meatbag-footer a:hover,
+.meatbag-footer a:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 700px) {
+  .workout-cards-panel {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+}
